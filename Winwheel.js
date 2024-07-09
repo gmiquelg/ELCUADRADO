@@ -1720,7 +1720,7 @@ Winwheel.prototype.startAnimation = function() {
             this.tween = TweenMax.to(this, this.animation.duration, properties);
         } catch (e) {
             console.error("TweenMax error:", e);
-            alert("TweenMax error: " + e.message);
+            alert("TweenMax: " + e.message);
         }
 
     }
