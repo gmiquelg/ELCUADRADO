@@ -100,8 +100,8 @@
             'animation' :           // Specify the animation to use.
                 {
                     'type'     : 'spinToStop',
-                    'duration' : 5,     // Duration in seconds.
-                    'spins'    : 8,     // Number of complete spins.
+                    'duration' : 4,     // Duration in seconds.
+                    'spins'    : 5,     // Number of complete spins.
                     'callbackFinished' : alertPrize
                 }
         });
@@ -119,9 +119,9 @@
         // -------------------------------------------------------
         function startSpin()
         {
-            alert("tonto");
             // Ensure that spinning can't be clicked again while already running.
             if (wheelSpinning == false) {
+                alert("tonto");
                 // Based on the power level selected adjust the number of spins for the wheel, the more times is has
                 // to rotate with the duration of the animation the quicker the wheel spins.
                 theWheel.animation.spins = 15;

@@ -1699,6 +1699,7 @@ Winwheel.prototype.getRotationPosition = function()
 Winwheel.prototype.startAnimation = function()
 {
     if (this.animation) {
+        alert("tonto3");
         // Call function to compute the animation properties.
         this.computeAnimation();
 
@@ -1772,6 +1773,7 @@ Winwheel.prototype.resumeAnimation = function()
 // ====================================================================================================================
 Winwheel.prototype.computeAnimation = function()
 {
+    alert("tonto4");
     if (this.animation) {
         // Set the animation parameters for the specified animation type including some sensible defaults if values have not been specified.
         if (this.animation.type == 'spinOngoing') {
@@ -1890,6 +1892,7 @@ Winwheel.prototype.computeAnimation = function()
                 this.animation.propertyValue += this.animation._stopAngle;
             }
         } else if (this.animation.type == 'custom') {
+            alert("tontisimo");
             // Do nothing as all values must be set by the developer in the parameters
             // especially the propertyName and propertyValue.
         }
