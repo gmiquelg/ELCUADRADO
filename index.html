@@ -5,177 +5,72 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     </head>
     <body>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ruleta Extrema</title>
-        <style>
-            body, html {
-                height: 100%;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-image: url(./background.png);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                font-family: arial;
-            }
-
-            .container {
-                text-align: center;
-                background-color: white;
-                padding: 20px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                border-radius: 5px;
-                border: 3px solid #9b8400;
-                max-width: 90%;
-            }
-
-            h1 {
-                background-color: #FFD700;
-                color: #9b8400;
-                padding: 10px;
-                border-radius: 5px;
-                border: 3px solid #9b8400;
-            }
-
-            .power_controls img {
-                cursor: pointer;
-            }
-
-            #spin_button {
-                background-color: #FFD700;
-                color: #9b8400;
-                border: 3px solid #9b8400;
-                border-radius: 5px;
-                padding: 10px 20px;
-                font-size: 20px;
-                cursor: pointer;
-                font-weight: bold;
-            }
-
-            #spin_button:hover {
-                background-color: #FFC700;
-            }
-
-            td.the_wheel {
-                background-image: url(./wheel_back.png);
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            h1, p {
-                margin: 0;
-            }
-
-            div.power_controls {
-                margin-right: 70px;
-            }
-
-            div.html5_logo {
-                margin-left: 70px;
-            }
-
-            table.power {
-                background-color: #cccccc;
-                cursor: pointer;
-                border: 1px solid #333333;
-            }
-
-            table.power th {
-                background-color: white;
-                cursor: default;
-            }
-
-            td.pw1 {
-                background-color: #6fe8f0;
-            }
-
-            td.pw2 {
-                background-color: #86ef6f;
-            }
-
-            td.pw3 {
-                background-color: #ef6f6f;
-            }
-
-            .clickable {
-                cursor: pointer;
-            }
-
-            .margin_bottom {
-                margin-bottom: 5px;
-            }
-
-            @media (max-width: 767px) {
-                .container {
-                    padding: 10px;
-                }
-
-                td.the_wheel {
-                    width: 100%;
-                    height: auto;
-                }
-
-                canvas {
-                    width: 100%;
-                    height: auto;
-                }
-
-                div.power_controls {
-                    margin-right: 0;
-                }
-
-                #spin_button {
-                    font-size: 16px;
-                    padding: 8px 16px;
-                }
-            }
-
-            @media (min-width: 768px) and (max-width: 1024px) {
-                .container {
-                    width: 80%;
-                }
-
-                td.the_wheel {
-                    width: 75%;
-                    height: auto;
-                }
-            }
-        </style>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Cuadrado</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(./background.png); /* Ruta de tu imagen */
+            background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+            background-position: center; /* Centra la imagen en el fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-attachment: fixed; /* Hace que la imagen de fondo se mantenga fija al hacer scroll */
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            border: 3px solid #9b8400; /* Añadido borde negro */
+        }
+        h1 {
+            background-color: #FFD700;
+            color: #9b8400;
+            padding: 10px;
+            border-radius: 5px;
+            border: 3px solid #9b8400; /* Añadido borde negro */
+        }
+        .power_controls img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
     <div class="container">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
-            <tr>
-                <td colspan="2" align="center">
-                    <h1>EL CUADRADO</h1>
-                    <br><br>
-                </td>
-            </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <h1>EL CUADRADO</h1>
+                        <br><br>
+                    </td>
+                </tr>
             </tbody>
             <tbody>
-            <tr>
-                <td>
-                    <div class="power_controls">
-                        <button id="spin_button" onclick="startSpin();" class="">
-                            SPIN
-                        </button>
-                        <br><br>
-                    </div>
-                </td>
-                <td width="438" height="450" class="the_wheel" align="center" valign="center">
-                    <canvas id="canvas" width="434" height="434">
-                        <p style="color: white" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
-                    </canvas>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <div class="power_controls">
+                            <button id="spin_button" onclick="startSpin();" class="">
+                                SPIN
+                            </button>
+                            <br><br>
+                        </div>
+                    </td>
+                    <td width="438" height="450" class="the_wheel" align="center" valign="center">
+                        <canvas id="canvas" width="434" height="434">
+                            <p style="color: white" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                        </canvas>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
