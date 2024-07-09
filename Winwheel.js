@@ -1718,7 +1718,6 @@ Winwheel.prototype.startAnimation = function() {
         // Keep reference to the tween object in the wheel as that allows pausing, resuming, and stopping while the animation is still running.
         try {
             this.tween = TweenMax.to(this, this.animation.duration, properties);
-            alert("tontaco");
         } catch (e) {
             console.error("TweenMax error:", e);
             alert("TweenMax error: " + e.message);
