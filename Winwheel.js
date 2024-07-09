@@ -1696,34 +1696,42 @@ Winwheel.prototype.getRotationPosition = function()
 // ==================================================================================================================================================
 // This function starts the wheel's animation by using the properties of the animation object of of the wheel to begin the a greensock tween.
 // ==================================================================================================================================================
-Winwheel.prototype.startAnimation = function()
-{
+Winwheel.prototype.startAnimation = function() {
     if (this.animation) {
         alert("tonto");
+        console.log("Animation object found:", this.animation);
+
         // Call function to compute the animation properties.
         this.computeAnimation();
+        alert("tonto1");
+        console.log("Animation computed");
 
         // Set this global variable to this object as an external function is required to call the draw() function on the wheel
         // each loop of the animation as Greensock cannot call the draw function directly on this class.
         winwheelToDrawDuringAnimation = this;
 
-        // Put together the properties of the greesock animation.
+        // Put together the properties of the Greensock animation.
         let properties = new Array(null);
         properties[this.animation.propertyName] = this.animation.propertyValue; // Here we set the property to be animated and its value.
-        properties['yoyo']       = this.animation.yoyo;     // Set others.
-        properties['repeat']     = this.animation.repeat;
-        properties['ease']       = this.animation.easing;
-        properties['onUpdate']   = winwheelAnimationLoop;   // Call function to re-draw the canvas.
+        properties['yoyo'] = this.animation.yoyo;     // Set others.
+        properties['repeat'] = this.animation.repeat;
+        properties['ease'] = this.animation.easing;
+        properties['onUpdate'] = winwheelAnimationLoop;   // Call function to re-draw the canvas.
         properties['onComplete'] = winwheelStopAnimation;   // Call function to perform actions when animation has finished.
+        alert("tonto2");
+        console.log("Properties set for TweenMax:", properties);
 
         // Do the tween animation passing the properties from the animation object as an array of key => value pairs.
         // Keep reference to the tween object in the wheel as that allows pausing, resuming, and stopping while the animation is still running.
-        alert("tonto2");
         this.tween = TweenMax.to(this, this.animation.duration, properties);
         alert("tonto3");
+        console.log("TweenMax animation started");
     }
+    alert("tonto4");
     this.resetWheel();
+    console.log("Wheel reset");
 }
+
 
 // ==================================================================================================================================================
 // Use same function which needs to be outside the class for the callback when it stops because is finished.
