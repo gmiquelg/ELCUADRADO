@@ -1699,7 +1699,7 @@ Winwheel.prototype.getRotationPosition = function()
 Winwheel.prototype.startAnimation = function()
 {
     if (this.animation) {
-        alert("tonto3");
+        alert("tonto");
         // Call function to compute the animation properties.
         this.computeAnimation();
 
@@ -1718,9 +1718,10 @@ Winwheel.prototype.startAnimation = function()
 
         // Do the tween animation passing the properties from the animation object as an array of key => value pairs.
         // Keep reference to the tween object in the wheel as that allows pausing, resuming, and stopping while the animation is still running.
+        alert("tonto2");
         this.tween = TweenMax.to(this, this.animation.duration, properties);
+        alert("tonto3");
     }
-
     this.resetWheel();
 }
 
@@ -1773,7 +1774,6 @@ Winwheel.prototype.resumeAnimation = function()
 // ====================================================================================================================
 Winwheel.prototype.computeAnimation = function()
 {
-    alert("tonto4");
     if (this.animation) {
         // Set the animation parameters for the specified animation type including some sensible defaults if values have not been specified.
         if (this.animation.type == 'spinOngoing') {
@@ -1892,7 +1892,6 @@ Winwheel.prototype.computeAnimation = function()
                 this.animation.propertyValue += this.animation._stopAngle;
             }
         } else if (this.animation.type == 'custom') {
-            alert("tontisimo");
             // Do nothing as all values must be set by the developer in the parameters
             // especially the propertyName and propertyValue.
         }
