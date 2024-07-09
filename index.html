@@ -37,6 +37,13 @@
         .power_controls img {
             cursor: pointer;
         }
+
+        @media (max-width: 768px) {
+            .container {
+                transform: scale(0.25); /* Scale down to 25% */
+                transform-origin: center center; /* Ensure scaling is centered */
+            }
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script type="text/javascript" src="Winwheel.js"></script>
