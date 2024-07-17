@@ -1,3 +1,3 @@
 # ELCUADRADO
 
-Try it: https://elcuadrado.zeabur.app/
+https://elcuadrado.zeabur.app/
